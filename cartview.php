@@ -31,10 +31,6 @@ require_once('php/connect.php');
 </style>
 <body>
 <?php 
-if(isset($_SESSION['mem_id'])==""){
-    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน")</script>';
-    header('Refresh:0; url=../index.php');
-}
 $mem_id =$_SESSION['mem_id'];
 $sql1="SELECT * FROM `cart`,`product` WHERE cart.product_id=product.product_id AND cart.mem_id=$mem_id";
 $result1=mysqli_query($conn,$sql1);
