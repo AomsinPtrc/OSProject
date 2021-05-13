@@ -18,20 +18,20 @@
                         WHERE mem_id ='".$_SESSION["mem_id"]."'";
             $result_pw = $conn->query($sql_pw)or die($conn->error);
             if($result_pw){
-                echo '<script> alert("เปลี่ยนรหัสผ่านสำเร็จ")</script>';
                 header('Refresh:0; url=../index.php');
+                echo '<script> alert("เปลี่ยนรหัสผ่านสำเร็จ")</script>';
             }
 
                         
 
         }else{
-            echo '<script> alert("รหัสผ่านเดิมไม่ถูกต้อง")</script>';
             header('Refresh:0; url=../index.php');
+            echo '<script> alert("รหัสผ่านเดิมไม่ถูกต้อง")</script>';
         }
 
     }else{
-        echo '<script>alert("รหัสผ่านใหม่ไม่ตรงกัน")</script>';
         header('Refresh:0; url=../index.php');
+        echo '<script>alert("รหัสผ่านใหม่ไม่ตรงกัน")</script>';
     }
  }else{
      header('location:../index.php');

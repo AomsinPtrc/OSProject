@@ -19,16 +19,16 @@
         $product_price=$rowse['product_price'];
     
         if($carttotal==4){
-            echo '<script>alert("เลือกสินค้าได้มากสุด4ชิ้น") </script>';
             header('Refresh:0; url=../stores.php');//สำเร็จ
+            echo '<script>alert("เลือกสินค้าได้มากสุด4ชิ้น") </script>';
         }else{
             if(isset($_POST['addcart'])){
                 $sql="INSERT INTO `cart` VALUES ('$count','$product_id','$mem_id','$product_price','$datetime')";
                 $res= $conn->query($sql) or die($conn->error);
                     if($res){
                         $count++;
-                        echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                         header('Refresh:0; url=../stores.php');//สำเร็จ
+                        echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                     }else{
                         echo $sql;
                     }

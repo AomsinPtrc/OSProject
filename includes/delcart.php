@@ -4,11 +4,11 @@
     $sql="DELETE FROM `cart` WHERE cart_id = $cart_id";
 
     if (mysqli_query($conn, $sql)) {
+        header('Refresh:0; url=../index.php');
         echo '<script> alert("ลบข้อมูลเสร็จสิ้น!")</script>'; 
-        header('Refresh:0; url=../index.php');
     } else {
-        echo "Error deleting record: " . mysqli_error($connect);
         header('Refresh:0; url=../index.php');
+        echo "Error deleting record: " . mysqli_error($connect);
     }
     mysqli_close($conn);
 ?>
