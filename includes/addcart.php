@@ -23,10 +23,10 @@
             echo '<script>alert("เลือกสินค้าได้มากสุด4ชิ้น") </script>';
         }else{
             if(isset($_POST['addcart'])){
+                header('Refresh:0; url=../stores.php');//สำเร็จ
                 $sql="INSERT INTO `cart` VALUES ('$count','$product_id','$mem_id','$product_price','$datetime')";
                 $res= $conn->query($sql) or die($conn->error);
                 $count++;
-                header('Refresh:0; url=../stores.php');//สำเร็จ
                     // if($res){
                     //     echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                     // }else{
