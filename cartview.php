@@ -32,7 +32,7 @@ require_once('php/connect.php');
 <body>
 <?php 
 if(isset($_SESSION['mem_id']) < 0){
-    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน")</script>';
+    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน cartview")</script>';
     header('Refresh:0; url=../index.php');
 }
 $mem_id =$_SESSION['mem_id'];
@@ -81,7 +81,6 @@ include('includes/navbar.php')?>
     
  <?php 
  include('includes/footer.php');
- 
  ?>
 <script src="node_modules/jquery/dist/jquery.min.js"></script><!--เรียกjquery -->
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script><!--เรียกpopper -->

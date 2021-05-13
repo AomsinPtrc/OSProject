@@ -56,7 +56,7 @@ $sql = $conn->query("update orders set order_status = '1' where order_id = '$_RE
 <?php 
 
 if(isset($_SESSION['mem_id'])==""){
-    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน")</script>';
+    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน payment")</script>';
     header('Refresh:0; url=../index.php');
 }
 

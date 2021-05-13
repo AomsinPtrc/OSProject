@@ -1,9 +1,9 @@
-<?php error_reporting(~E_ALL);?>
- 
-<?php require_once('php/connect.php');
-    include('includes/function.php')?>
-<?php 
+<?php error_reporting(~E_ALL);
+require_once('php/connect.php');
+include('includes/function.php');
+?>
 
+<?php 
 $mem_id =$_SESSION['mem_id'];
 $datetime=date("Y-m-d H:i:s");
     if($_REQUEST['data']=='confirm') {
@@ -55,7 +55,7 @@ if($_REQUEST['data']=='cancel'){
 <?php 
 
 if(isset($_SESSION['mem_id'])==""){
-    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน")</script>';
+    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน order")</script>';
     header('Refresh:0; url=../index.php');
 }
 
