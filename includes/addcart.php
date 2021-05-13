@@ -19,31 +19,29 @@
         $product_price=$rowse['product_price'];
     
         if($carttotal==4){
-            header('Refresh:0; url=../stores.php');//สำเร็จ
+            header('Refresh:0; url=../stores.php'); //สำเร็จ
             echo '<script>alert("เลือกสินค้าได้มากสุด4ชิ้น") </script>';
         }else{
             if(isset($_POST['addcart'])){
-                header('Refresh:0; url=../stores.php');//สำเร็จ
                 $sql="INSERT INTO `cart` VALUES ('$count','$product_id','$mem_id','$product_price','$datetime')";
                 $res= $conn->query($sql) or die($conn->error);
                 $count++;
-                    // if($res){
-                    //     echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
-                    // }else{
-                    //     echo $sql;
-                    // }
+                if($res){
+                    header('Refresh:0; url=../stores.php'); //สำเร็จ
+                    echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
+                }else{
+                    echo $sql;
+                }
             }else{
                 echo ("<script LANGUAGE='JavaScript'>
                 window.location.href='../index.php';
                 </script>"); 
             }
         }
-        
-    }else{//เช็คเมื่อไม่ได้loginแล้วกดเพิม่สินค้า
+    }else{ //เช็คเมื่อไม่ได้loginแล้วกดเพิม่สินค้า
         echo ("<script LANGUAGE='JavaScript'>
             window.alert('เข้าสู่ระบบก่อน');
             window.location.href='../index.php';
             </script>"); 
-
     }
 ?>
