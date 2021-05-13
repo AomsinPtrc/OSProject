@@ -1,4 +1,7 @@
-<?php error_reporting(~E_NOTICE);	 ?>
+<?php error_reporting(~E_NOTICE);	
+  require_once('php/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +29,9 @@ include('includes/navbar.php')?>
     <br><br><br><br><br>
     <center>
  <?php 
- include('includes/product.php');
+  include('includes/product.php');
   //include('includes/search.php');
-?>
+  ?>
 
  <?php  include('includes/footer.php');?>
 <script src="node_modules/jquery/dist/jquery.min.js"></script><!--เรียกjquery -->

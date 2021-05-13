@@ -22,7 +22,7 @@
 }
 
 </style>
-  <?php require_once('php/connect.php');
+  <?php 
   $mem_id=$_SESSION['mem_id'];
   $sql="SELECT * FROM `cart`,`product`  WHERE cart.product_id=product.product_id AND cart.mem_id = '$mem_id'";
   $result=mysqli_query($conn,$sql);
