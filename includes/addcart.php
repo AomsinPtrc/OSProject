@@ -26,8 +26,8 @@
                 $sql="INSERT INTO `cart` VALUES ('$count','$product_id','$mem_id','$product_price','$datetime')";
                 $res= $conn->query($sql) or die($conn->error);
                     if($res){
-                        $count++;
                         header('Refresh:0; url=../stores.php');//สำเร็จ
+                        $count++;
                         echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                     }else{
                         echo $sql;
