@@ -31,7 +31,7 @@ require_once('php/connect.php');
 </style>
 <body>
 <?php 
-if(isset($_SESSION['mem_id']) == null){
+if(isset($_SESSION['mem_id']) < 0){
     echo '<script> alert("กรุณาเข้าสู่ระบบก่อน")</script>';
     header('Refresh:0; url=../index.php');
 }
