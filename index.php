@@ -1,4 +1,5 @@
 <?php error_reporting(~E_NOTICE);?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,6 @@ include('includes/navbar.php')?>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script><!--เรียกpopper -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script><!--เรียกbootstrap.min.js -->
 <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script><!--เรียกjquery.validate -->
-<script src='https://www.google.com/recaptcha/api.js' async defer ></script>
 </body>
 
 </html>
@@ -123,6 +123,7 @@ include('includes/navbar.php')?>
                 
             });
         })
+
         //changepassword
         $( document ).ready(function(){
             $('#changepassword').validate({
@@ -171,7 +172,4 @@ include('includes/navbar.php')?>
                 }
             });
         })
-        function recaptchaCallback(){//เปิดปุ่มเมื่อมีการกดcaptcha
-            $('#submit').removeAttr('disabled');
-        }
     </script>

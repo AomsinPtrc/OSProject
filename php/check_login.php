@@ -39,12 +39,6 @@ require_once('connect.php');
 }
 
 
-
-
-
-
-
-
   /// PHP old version.
  	// $passwordmem=$_POST['password'];
 	// $mem_pass=md5($passwordmem);

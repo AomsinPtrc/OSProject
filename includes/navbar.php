@@ -22,14 +22,14 @@
 }
 
 </style>
-<?php require_once('php/connect.php');
-$mem_id=$_SESSION['mem_id'];
-$sql="SELECT * FROM `cart`,`product`  WHERE cart.product_id=product.product_id AND cart.mem_id = '$mem_id'";
-$result=mysqli_query($conn,$sql);
-$sqlcount="SELECT COUNT(*) AS carttotal FROM `cart` WHERE mem_id = '$mem_id'";
-$ressultcount=mysqli_query($conn,$sqlcount);
-$rowcount=mysqli_fetch_array($ressultcount);
-$_SESSION['carttotal']=$rowcount['carttotal'];
+  <?php require_once('php/connect.php');
+  $mem_id=$_SESSION['mem_id'];
+  $sql="SELECT * FROM `cart`,`product`  WHERE cart.product_id=product.product_id AND cart.mem_id = '$mem_id'";
+  $result=mysqli_query($conn,$sql);
+  $sqlcount="SELECT COUNT(*) AS carttotal FROM `cart` WHERE mem_id = '$mem_id'";
+  $ressultcount=mysqli_query($conn,$sqlcount);
+  $rowcount=mysqli_fetch_array($ressultcount);
+  $_SESSION['carttotal']=$rowcount['carttotal'];
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
   <a class="navbar-brand " href="index.php"> <img alt="Logo" src="image/logo.png" width="40" height="40"> SPShop </a>
@@ -39,7 +39,7 @@ $_SESSION['carttotal']=$rowcount['carttotal'];
     
   <div class="collapse navbar-collapse" id="navbarColor01">
     <?php if(isset($_SESSION["mem_id"])) {?>
-<!-- login แล้ว -->
+    <!-- login แล้ว -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.php"><i class="fas fa-home"> </i> <?php echo $home?>  <span class="sr-only">(current)</span></a>
@@ -123,7 +123,7 @@ $_SESSION['carttotal']=$rowcount['carttotal'];
     </center>
     <!-- -------------------------------------------------------------------------------------- -->
     <?php }else{?> 
-<!-- ไม่ได้login-->
+    <!-- ไม่ได้login-->
       <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.php"><i class="fas fa-home"> </i><?php echo $home ?> <span class="sr-only">(current)</span></a>
