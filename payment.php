@@ -1,30 +1,28 @@
 <?php //error_reporting(~E_ALL);?>
  
 <?php
-
 require_once('php/connect.php');
-    include('includes/function.php')?>
-<?php 
-
-if($_REQUEST['data']=='payment'){
-$file = strrchr($_FILES['file']['name'], "."); //ตัดนามสกุลไฟล์เก็บไว้
-$filename = (Date("dmy_His").$file); //ตั้งเป็น วันที่_เวลา.นามสกุล
-$folder = "assets/image/payments/"; // path folder
-$width = 0;// ความกว้างของภาพ
-$height = 0;// ความยาวของภาพ
-Upload_File ($filename,$folder,$width,$height); 
-$sql1=$conn->query("INSERT INTO `payment` set `payment_id`= '', `order_id`='$_REQUEST[order_id]', `mem_id`= '$_SESSION[mem_id]', `payment_file`='$filename', `payment_price`='$_REQUEST[payment_price]', `payment_bank`='$_REQUEST[payment_bank]', `payment_Detail`='$_REQUEST[payment_Detail]', `payment_date`='$_REQUEST[payment_date]', `payment_time`='$_REQUEST[payment_time]'");
-Chk_Insert($sql1,'รอตรวจสอบชำระเงิน','orderhistory.php');
-
-$sql = $conn->query("update orders set order_status = '1' where order_id = '$_REQUEST[order_id]'");
-  
-  //function check แก้ไขข้อมูล จะมี alert ขึ้นมา ตามเงื่อนไข
-  Chk_Update($sql,'อัพเดทข้อมูลเรียบร้อย');
-}
-
-
-
+include('includes/function.php');
 ?>
+
+<?php 
+    if($_REQUEST['data']=='payment'){
+      $file = strrchr($_FILES['file']['name'], "."); //ตัดนามสกุลไฟล์เก็บไว้
+      $filename = (Date("dmy_His").$file); //ตั้งเป็น วันที่_เวลา.นามสกุล
+      $folder = "assets/image/payments/"; // path folder
+      $width = 0;// ความกว้างของภาพ
+      $height = 0;// ความยาวของภาพ
+      Upload_File ($filename,$folder,$width,$height); 
+      $sql1=$conn->query("INSERT INTO `payment` set `payment_id`= '', `order_id`='$_REQUEST[order_id]', `mem_id`= '$_SESSION[mem_id]', `payment_file`='$filename', `payment_price`='$_REQUEST[payment_price]', `payment_bank`='$_REQUEST[payment_bank]', `payment_Detail`='$_REQUEST[payment_Detail]', `payment_date`='$_REQUEST[payment_date]', `payment_time`='$_REQUEST[payment_time]'");
+      Chk_Insert($sql1,'รอตรวจสอบชำระเงิน','orderhistory.php');
+
+      $sql = $conn->query("update orders set order_status = '1' where order_id = '$_REQUEST[order_id]'");
+        
+        //function check แก้ไขข้อมูล จะมี alert ขึ้นมา ตามเงื่อนไข
+        Chk_Update($sql,'อัพเดทข้อมูลเรียบร้อย');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +36,7 @@ $sql = $conn->query("update orders set order_status = '1' where order_id = '$_RE
     <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
     <title>SP Shop</title>
 </head>
+
 <style>
     body{
         background-color:#a9a8a863;
@@ -47,26 +46,24 @@ $sql = $conn->query("update orders set order_status = '1' where order_id = '$_RE
     .container{
         margin-top: 11px;
     }
-    .table-responsive {
+    .table-responsive { 
     display: table;
-}
-    
+    }
 </style>
+
 <body>
 <?php 
-
-if(isset($_SESSION['mem_id'])==""){
-    echo '<script> alert("กรุณาเข้าสู่ระบบก่อน payment")</script>';
-    header('Refresh:0; url=../index.php');
-}
-
-$sql=$conn->query("SELECT * FROM orders WHERE order_id = '$_REQUEST[order_id]'");
-$show=$sql->fetch_assoc();
+    if(isset($_SESSION['mem_id'])==" "){
+      echo '<script> alert("กรุณาเข้าสู่ระบบก่อน payment")</script>';
+      header('Refresh:0; url=../index.php');
+    }
+    $sql=$conn->query("SELECT * FROM orders WHERE order_id = '$_REQUEST[order_id]'");
+    $show=$sql->fetch_assoc();
 ?>
-<?php 
 
-require_once 'config.php';
-include('includes/navbar.php');
+<?php 
+  require_once 'config.php';
+  include('includes/navbar.php');
 ?>
     <!-- The Modal -->
     <br><br><br><br>
