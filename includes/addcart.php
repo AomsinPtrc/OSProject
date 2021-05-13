@@ -19,7 +19,7 @@ if(isset($mem_id)){
   
     if($carttotal==4){
         echo '<script>alert("เลือกสินค้าได้มากสุด4ชิ้น") </script>';
-        header('Refresh:0; url=../stores.php');//สำเร็จ
+        header('location=../stores.php');//สำเร็จ
     }else{
         if(isset($_POST['addcart'])){
             $sql="INSERT INTO `cart` VALUES ('$count','$product_id','$mem_id','$product_price','$datetime')";
@@ -27,7 +27,7 @@ if(isset($mem_id)){
                 if($res){
                     echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                     $count++;
-                  header('Refresh:0; url=../stores.php');//สำเร็จ
+                    header('location=../stores.php');//สำเร็จ
                 }else{
                     echo $sql;
                 }
