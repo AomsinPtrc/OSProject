@@ -1,6 +1,5 @@
 <?php error_reporting(~E_NOTICE);
-
-
+require_once('php/connect.php');
 ?>
 <?php require_once('php/connect.php');?>
 <!DOCTYPE html>

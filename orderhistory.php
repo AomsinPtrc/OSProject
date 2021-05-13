@@ -1,4 +1,6 @@
-<?php error_reporting(~E_ALL);?>
+<?php error_reporting(~E_ALL);
+require_once('php/connect.php');
+?>
 
 <?php require_once('php/connect.php');
 include('includes/function.php');

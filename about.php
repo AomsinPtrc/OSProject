@@ -1,4 +1,6 @@
-<?php error_reporting(~E_NOTICE);?>
+<?php error_reporting(~E_NOTICE);
+require_once('php/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -92,7 +92,7 @@ $res=mysqli_query($conn,$sql);
     <h3><center>New Collection</center></h3><br>
   <div id="result">
     <div class="row">
-      <div class="card-deck">
+      <div class="card-deck" style="width: 100%">
         <?php while ($row = mysqli_fetch_array($res)) { ?>
           <div class="col-sm-4 ">
             <div class="card card-5"><a class="card-link" data-toggle="modal" data-target="#myModal<?php echo $row["product_id"]; ?>">

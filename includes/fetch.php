@@ -22,7 +22,7 @@ $result = mysqli_query($conn,$sql2);
         <div id="result">
         <br><br><br><br><br>
         <div class="row">
-          <div class="card-deck ">
+          <div class="card-deck " style="width: 100%">
           
             <?php while ($row = mysqli_fetch_array($result)) { ?>
               <div class="col-sm-4" style="padding: 20px;padding-left: 90px;">

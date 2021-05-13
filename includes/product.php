@@ -181,7 +181,7 @@ $res = mysqli_query($conn, $sql);
   
     <div class="row">
       
-      <div class="card-deck ">
+      <div class="card-deck " style="width: 100%">
       
         <?php while ($row = mysqli_fetch_array($res)) { ?>
           <div class="col-sm-4" style="padding: 20px;">
