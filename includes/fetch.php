@@ -29,7 +29,7 @@ $result = mysqli_query($conn,$sql2);
                
                 <div class="card card-5 " data-toggle="modal" data-target="#myModal<?php echo $row["product_id"]; ?>">
                   <span class="shopping-mall-tagn">New </span><span class="shopping-mall-tag">Sale! </span>
-                  <img class="card-img-top border-bottom border-primary" src="assets/image/store/<?php echo $row["product_image"] ?>" alt="Card image cap">
+                  <img class="card-img-top border-bottom border-primary" src="image/store/<?php echo $row["product_image"] ?>" alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title" style="color:black"><?php echo $row["product_name"]; ?></h4>
                     <p class="card-text box"><?php echo $row["product_detail"]; ?></p>
@@ -64,7 +64,7 @@ $result = mysqli_query($conn,$sql2);
                             <div id="js-gallery" class="gallery">
                               <!--Gallery Hero-->
                               <div class="gallery__hero">
-                                <img class="imgm" src="assets/image/store/<?php echo $row["product_image"] ?>">
+                                <img class="imgm" src="image/store/<?php echo $row["product_image"] ?>">
                               </div>
                             </div>
                             <!--.gallery-->
