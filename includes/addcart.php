@@ -1,6 +1,4 @@
-<?php require_once('../php/connect.php');?>
-
-<?php
+<?php require_once('../php/connect.php');
     date_default_timezone_set("Asia/Bangkok");
     //echo 'POST<pre>',print_r($_POST),'</pre>';
     error_reporting(~E_NOTICE);
