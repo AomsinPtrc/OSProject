@@ -29,22 +29,22 @@
                         $sql="INSERT INTO `members` VALUES (null,'$mem_fname','$mem_lname','$mem_email','$mem_tel','$mem_address','$mem_username','$hash_password','$mem_create_at','user')";
                         $res=mysqli_query($conn,$sql);
                             echo "<script> alert('Register Sucess');</script>";
-                            redirect('index');
+                            header('Refresh:0; url=../index.php');
                     }else{
                             echo "<script> alert('ชื่อผู้ใช้นี้ ถูกใช้ไปแล้ว! โปรดกรอกข้อมูลใหม่อีกครั้ง');</script>";
-                            redirect('index');
+                            header('Refresh:0; url=../index.php');
                     }
 
                 }else{
                     echo "<script> alert('Verification Failed');</script>";
-                    redirect('index');
+                    header('Refresh:0; url=../index.php');
                 }
             } else{
-                redirect('index');
+                header('Refresh:0; url=../index.php');
         }
 
     }else{
-        redirect('index');
+        header('Refresh:0; url=../index.php');
     }
    
 ?>
