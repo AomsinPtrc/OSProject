@@ -1,6 +1,6 @@
 <?php 
 	function redirect($path){
-    	header('refresh:0; url=../index.php');
+    	header('refresh:0; url=../'.$path.'.php');
 	}
 
 	function datathai1($s){
