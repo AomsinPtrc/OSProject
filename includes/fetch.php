@@ -1,12 +1,12 @@
 <?php 
 include('../config.php');
-
 ?>
+
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$conn = mysqli_connect($servername, $username, $password,"smartwatch");
+$password = "root";
+$conn = mysqli_connect($servername, $username, $password,"maria");
 
 $output='';
 // $noysud=$_POST['noysud'];
