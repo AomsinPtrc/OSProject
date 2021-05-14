@@ -2,7 +2,8 @@
 	function redirect($path){
     	header('refresh:0; url=../'.$path.'.php');
 	}
-
+?>
+<?php
 	function datathai1($s){
 		if($s!='0000-00-00'){
 			$d=explode("-",$s);
