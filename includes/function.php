@@ -1,6 +1,6 @@
 <?php 
 	function redirect($path){
-    	header('refresh:0; url=../'.$path.'.php');
+    	header('Refresh:0; url=../'.$path.'.php');
 	}
 ?>
 <?php
