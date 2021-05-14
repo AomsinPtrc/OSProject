@@ -28,7 +28,7 @@
                 $count++;
                 if($res){
                     //header('Refresh:0; url=../stores.php'); //สำเร็จ
-                    // echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
+                    echo '<script>alert("เพิ่มลงตระกร้าแล้ว") </script>';
                 }else{
                     echo $sql;
                 }
