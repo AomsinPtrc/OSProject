@@ -59,9 +59,9 @@ var Gallery = {
     var containerHeight = imgContainer.outerHeight(),
     src = img.attr('src');
     
-    if ( src.indexOf('/products/normal/') != -1 ) {
+    if (src.indexOf('/products/normal/') != -1 ) {
       // Set height of container
-      imgContainer.css( "height", containerHeight );
+      imgContainer.css("height", containerHeight );
       
       // Switch hero image src with large version
       img.attr('src', src.replace('/products/normal/', '/products/zoom/') );

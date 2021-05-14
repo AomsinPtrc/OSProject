@@ -3,10 +3,10 @@ include('../config.php');
 ?>
 
 <?php
-$servername = "localhost";
+$servername = "maria";
 $username = "root";
 $password = "root";
-$conn = mysqli_connect($servername, $username, $password,"maria");
+$conn = mysqli_connect($servername, $username, $password,"phone");
 
 $output='';
 // $noysud=$_POST['noysud'];
