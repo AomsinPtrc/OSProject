@@ -1,9 +1,8 @@
 <?php 
 	function redirect($path){
-    	header('Refresh:0; url=../' . $path . '.php');
+    	header('Refresh:0; url=../index.php');
 	}
-?>
-<?php
+
 	function datathai1($s){
 		if($s!='0000-00-00'){
 			$d=explode("-",$s);
@@ -63,20 +62,11 @@
 		
 	}
 			
-?>
-<?php 
-function Chk_Update($sql,$text){	
-	if($sql>0){
-		
-		Alert_Return($text);
-		
+	function Chk_Update($sql,$text){	
+		if($sql>0) {
+			Alert_Return($text);
+		}else {
+			Alert_Return('Not Complete!');
 		}
-		
-		else{
-		
-		Alert_Return('Not Complete!');
-		
-		}
-		
 	}	
 ?>
