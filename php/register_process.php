@@ -28,16 +28,16 @@
                         $hash_password= password_hash($mem_password, PASSWORD_DEFAULT);
                         $sql="INSERT INTO `members` VALUES (null,'$mem_fname','$mem_lname','$mem_email','$mem_tel','$mem_address','$mem_username','$hash_password','$mem_create_at','user')";
                         $res=mysqli_query($conn,$sql);
+                            header('Refresh:0; url=../index.php');
                             echo "<script> alert('Register Sucess');</script>";
-                            header('Refresh:0; url=../index.php');
                     }else{
-                            echo "<script> alert('ชื่อผู้ใช้นี้ ถูกใช้ไปแล้ว! โปรดกรอกข้อมูลใหม่อีกครั้ง');</script>";
                             header('Refresh:0; url=../index.php');
+                            echo "<script> alert('ชื่อผู้ใช้นี้ ถูกใช้ไปแล้ว! โปรดกรอกข้อมูลใหม่อีกครั้ง');</script>";
                     }
 
                 }else{
-                    echo "<script> alert('Verification Failed');</script>";
                     header('Refresh:0; url=../index.php');
+                    echo "<script> alert('Verification Failed');</script>";
                 }
             } else{
                 header('Refresh:0; url=../index.php');
