@@ -2,9 +2,6 @@
     require_once('connect.php');
     require_once('../includes/function.php');
     if(isset($_POST['submit'])){
-        //  echo '<pre>',print_r($_POST),'</pre>';
-
-        //reCAPTCHA
         $mem_fname = $_POST['mem_fname'];
         $mem_lname = $_POST['mem_lname'];
         $mem_email = $_POST['mem_email'];
@@ -23,7 +20,7 @@
                 $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$remoteIP";
                 $response = json_decode(file_get_contents($url));
 
-                if($response->success){
+                if($mem_password = $_POST['mem_password'];) {
                     $check_sql="SELECT * FROM members WHERE mem_username= '".$mem_username."' ";
                     $check_username= $conn->query($check_sql) or die($conn->error);
                 

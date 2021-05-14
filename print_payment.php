@@ -109,9 +109,9 @@ if($show2['order_shipping']==50){
             <td ><div align="center"><?php echo $show['product_price'];?></div></td>
             </tr>
             <?php 
-            $sqlcount ="SELECT COUNT('order_number') AS countorder_number FROM `order_detail` WHERE order_number = '$_REQUEST[order_number]'";
-            $rescount=mysqli_query($conn,$sql1);
-            $showcount=mysqli_fetch_array($rescount);
+            // $sqlcount ="SELECT COUNT('order_number') AS countorder_number FROM `order_detail` WHERE order_number = '$_REQUEST[order_number]'";
+            // $rescount=mysqli_query($conn,$sql1);
+            // $showcount=mysqli_fetch_array($rescount);
             
             $sqlcount = $conn->query("SELECT COUNT(order_number) AS countorder_number FROM `order_detail` WHERE order_number = '$_REQUEST[order_number]' ");
             $showcount= $sqlcount->fetch_assoc();
