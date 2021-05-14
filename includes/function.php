@@ -1,6 +1,6 @@
 <?php 
 	function redirect($path){
-    	header('Refresh:0; url=../index.php');
+    	header('Refresh:0; url=../' . $path . '.php');
 	}
 
 	function datathai1($s){
@@ -59,7 +59,6 @@
 		}else {
 			Alert_Return('Not Complete!');
 		}
-		
 	}
 			
 	function Chk_Update($sql,$text){	
